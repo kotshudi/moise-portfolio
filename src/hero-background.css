@@ -1,0 +1,39 @@
+﻿.hero-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 20, 38, 0.90) 0%,
+      rgba(7, 20, 38, 0.68) 40%,
+      rgba(7, 20, 38, 0.28) 72%,
+      rgba(7, 20, 38, 0.08) 100%
+    ),
+    url("./assets/images/moise-main.jpg") center center / cover no-repeat;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 20, 38, 0.05),
+      rgba(5, 13, 24, 0.35)
+    );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image-wrapper {
+  display: none;
+}
