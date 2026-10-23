@@ -1,29 +1,42 @@
-﻿import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-
+import { Link } from "react-router-dom";
+import { copy, useCopy, contactEmail } from "../content";
 export default function Footer() {
-  const { t } = useTranslation();
-
+  const c = useCopy();
   return (
     <footer className="site-footer">
       <div className="footer-inner">
         <div>
           <div className="footer-brand">MK</div>
           <p>Moise Diangelo Katemba</p>
-          <span>Educator · Entrepreneur · Developer</span>
+          <span>
+            {c(
+              copy(
+                "Educator · Entrepreneur · Developer",
+                "Éducateur · Entrepreneur · Développeur",
+              ),
+            )}
+          </span>
         </div>
-
         <div className="footer-links">
-          <Link to="/about">{t("nav.about")}</Link>
-          <Link to="/career">{t("nav.career")}</Link>
-          <Link to="/projects">{t("nav.projects")}</Link>
-          <Link to="/contact">{t("nav.contact")}</Link>
+          <Link to="/about">{c(copy("About", "À propos"))}</Link>
+          <Link to="/projects">{c(copy("Projects", "Projets"))}</Link>
+          <Link to="/contact">Contact</Link>
+          <a href={`mailto:${contactEmail}`}>
+            {c(copy("Send an email", "Envoyer un e-mail"))} ↗
+          </a>
         </div>
-
         <div className="footer-copy">
           © {new Date().getFullYear()} Moise Diangelo Katemba.
           <br />
-          {t("footer.rights")}
+          {c(copy("All rights reserved.", "Tous droits réservés."))}
+          <p>
+            {c(
+              copy(
+                "Built with purpose in Kinshasa.",
+                "Créé avec conviction à Kinshasa.",
+              ),
+            )}
+          </p>
         </div>
       </div>
     </footer>

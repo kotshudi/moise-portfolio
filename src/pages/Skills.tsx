@@ -1,111 +1,87 @@
-﻿const skills = [
-  {
-    number: "01",
-    title: "Teaching & Education",
-    description:
-      "English teaching, tutoring, curriculum support and learner development.",
-  },
-  {
-    number: "02",
-    title: "Business & Entrepreneurship",
-    description:
-      "Business development, project planning, budgeting and entrepreneurial thinking.",
-  },
-  {
-    number: "03",
-    title: "Leadership",
-    description:
-      "Team coordination, communication, organization and responsibility.",
-  },
-  {
-    number: "04",
-    title: "Web Development",
-    description:
-      "Building modern interfaces and web applications using technologies such as React, TypeScript and JavaScript.",
-  },
-  {
-    number: "05",
-    title: "Technology",
-    description:
-      "Experience with Microsoft tools, Firebase, GitHub, databases and digital platforms.",
-  },
-  {
-    number: "06",
-    title: "Automation",
-    description:
-      "Exploring Python automation and practical technology solutions.",
-  },
-  {
-    number: "07",
-    title: "Communication",
-    description:
-      "Professional communication in English and French with a strong focus on teaching and collaboration.",
-  },
-  {
-    number: "08",
-    title: "Project Development",
-    description:
-      "Turning ideas into structured projects, products and practical systems.",
-  },
-];
-
+import { copy, useCopy } from "../content";
+import PageHero, { SectionHeading } from "../components/PageHero";
 export default function Skills() {
+  const c = useCopy();
+  const skills = [
+    [
+      copy("Teaching & learning", "Enseignement et apprentissage"),
+      copy(
+        "English tutoring, lesson preparation, classroom teaching and learner support.",
+        "Cours d’anglais, préparation des leçons, enseignement scolaire et accompagnement des apprenants.",
+      ),
+    ],
+    [
+      copy("Business & organisation", "Gestion et organisation"),
+      copy(
+        "Project planning, budgeting, reporting and entrepreneurial problem-solving.",
+        "Planification de projets, budgets, rapports et résolution de problèmes entrepreneuriaux.",
+      ),
+    ],
+    [
+      copy("Web development", "Développement web"),
+      copy(
+        "React, TypeScript and JavaScript interfaces, with Firebase and Express project experience.",
+        "Interfaces React, TypeScript et JavaScript, avec une expérience de projets Firebase et Express.",
+      ),
+    ],
+    [
+      copy("Data & administration", "Données et administration"),
+      copy(
+        "Data entry, indexing, Microsoft tools, spreadsheets and careful record management.",
+        "Saisie de données, indexation, outils Microsoft, feuilles de calcul et gestion rigoureuse des dossiers.",
+      ),
+    ],
+    [
+      copy("Python & automation", "Python et automatisation"),
+      copy(
+        "Practical scripts for reporting, data processing and preparing digital assets.",
+        "Scripts pratiques pour les rapports, le traitement de données et la préparation de ressources numériques.",
+      ),
+    ],
+    [
+      copy("Communication & leadership", "Communication et leadership"),
+      copy(
+        "Training, team coordination and communication in English, French and Lingala.",
+        "Formation, coordination d’équipe et communication en anglais, français et lingala.",
+      ),
+    ],
+  ];
   return (
-    <main className="page">
-
-      <section className="page-hero">
-
-        <p className="eyebrow">SKILLS & EXPERTISE</p>
-
-        <h1>
-          What I can
-          <span> bring to the table.</span>
-        </h1>
-
-        <p className="page-lead">
-          A combination of education, business, technology,
-          communication and leadership skills developed through
-          study and practical experience.
-        </p>
-
-      </section>
-
+    <main className="page" id="main-content" tabIndex={-1}>
+      <PageHero
+        label={c(copy("SKILLS", "COMPÉTENCES"))}
+        title={c(copy("What I bring", "Ce que je peux"))}
+        accent={c(copy("to the work.", "apporter."))}
+        description={c(
+          copy(
+            "Human skills, business knowledge and technical practice, developed through study and real responsibilities.",
+            "Des compétences humaines, commerciales et techniques développées par les études et des responsabilités concrètes.",
+          ),
+        )}
+      />
       <section className="section">
-
-        <div className="section-heading">
-
-          <p className="section-label">
-            01 — EXPERTISE
-          </p>
-
-          <h2>
-            Skills built through
-            <span> real experience.</span>
-          </h2>
-
-        </div>
-
+        <SectionHeading
+          label={c(copy("01 — CAPABILITIES", "01 — SAVOIR-FAIRE"))}
+        >
+          {c(
+            copy(
+              "Skills built through practice.",
+              "Des compétences issues de la pratique.",
+            ),
+          )}
+        </SectionHeading>
         <div className="skills-grid">
-
-          {skills.map((skill) => (
-            <article className="skill-card" key={skill.number}>
-
-              <span className="project-number">
-                {skill.number}
-              </span>
-
+          {skills.map(([title, description], i) => (
+            <article className="skill-card" key={title.en}>
+              <span className="project-number">0{i + 1}</span>
               <div>
-                <h3>{skill.title}</h3>
-                <p>{skill.description}</p>
+                <h3>{c(title)}</h3>
+                <p>{c(description)}</p>
               </div>
-
             </article>
           ))}
-
         </div>
-
       </section>
-
     </main>
   );
 }

@@ -1,125 +1,76 @@
-﻿import { Link, useParams } from "react-router-dom";
-
-const projectData: Record<
-  string,
-  {
-    category: string;
-    title: string;
-    description: string;
-    details: string;
-  }
-> = {
-  ksf: {
-    category: "FINANCE",
-    title: "Katembatic Solidarity Funds",
-    description:
-      "A financial initiative focused on saving, responsible financing and financial empowerment.",
-    details:
-      "KSF is part of the wider Katembatic ecosystem and is designed around practical financial participation and community support.",
-  },
-
-  openpath: {
-    category: "EDUCATION",
-    title: "OpenPath",
-    description:
-      "An education initiative focused on practical English development.",
-    details:
-      "OpenPath helps learners develop their English communication skills through structured lessons, assignments and progressive learning.",
-  },
-
-  ksh: {
-    category: "COMMERCE",
-    title: "Katembatic Shopping Hub",
-    description:
-      "A digital shopping experience for products and services.",
-    details:
-      "KSH is being developed as part of the Katembatic ecosystem to make shopping and product discovery easier.",
-  },
-
-  ktrack: {
-    category: "TECHNOLOGY",
-    title: "Katembatic Track",
-    description:
-      "A student progress and learning management platform.",
-    details:
-      "K-TRACK is designed to help educators monitor student development across multiple learning areas.",
-  },
-
-  kcompass: {
-    category: "PRODUCTIVITY",
-    title: "K-COMPASS",
-    description:
-      "A productivity and activity planning concept.",
-    details:
-      "K-COMPASS explores a more complete approach to personal planning, activities and daily progress.",
-  },
-};
-
+import { Link, useParams } from "react-router-dom";
+import { copy, useCopy } from "../content";
+import { projects } from "../data/projects";
+import PageHero, { SectionHeading } from "../components/PageHero";
 export default function ProjectDetails() {
   const { projectId } = useParams();
-
-  const project = projectData[projectId || ""];
-
-  if (!project) {
+  const c = useCopy();
+  const project = projects.find((item) => item.id === projectId);
+  if (!project)
     return (
-      <main className="page">
-        <section className="page-hero">
-          <p className="eyebrow">PROJECT</p>
-          <h1>
-            Project
-            <span> not found.</span>
-          </h1>
-          <Link to="/projects" className="button primary">
-            Back to Projects
+      <main className="page" id="main-content" tabIndex={-1}>
+        <PageHero
+          label="404"
+          title={c(copy("Project", "Projet"))}
+          accent={c(copy("not found.", "introuvable."))}
+          description={c(
+            copy(
+              "This project is not in the portfolio.",
+              "Ce projet ne figure pas dans le portfolio.",
+            ),
+          )}
+        />
+        <section className="section">
+          <Link className="button primary" to="/projects">
+            {c(copy("Back to projects", "Retour aux projets"))}
           </Link>
         </section>
       </main>
     );
-  }
-
+  const next = projects[(projects.indexOf(project) + 1) % projects.length];
   return (
-    <main className="page">
-
-      <section className="page-hero">
-
-        <p className="eyebrow">{project.category}</p>
-
-        <h1>
-          {project.title}
-          <span>.</span>
-        </h1>
-
-        <p className="page-lead">
-          {project.description}
-        </p>
-
-      </section>
-
-      <section className="section">
-
-        <div className="section-heading">
-          <p className="section-label">
-            PROJECT OVERVIEW
-          </p>
-
-          <h2>
-            The idea behind
-            <span> the project.</span>
-          </h2>
-        </div>
-
-        <div className="story-content">
-          <p>{project.details}</p>
-        </div>
-
-        <div className="about-links">
-          <Link to="/projects" className="button secondary">
-            ← Back to Projects
+    <main className="page" id="main-content" tabIndex={-1}>
+      <PageHero
+        label={c(project.category)}
+        title={project.title}
+        accent=""
+        description={c(project.description)}
+      />
+      <section className="section project-overview">
+        <div>
+          <SectionHeading
+            label={c(copy("PROJECT OVERVIEW", "PRÉSENTATION DU PROJET"))}
+          >
+            {c(
+              copy(
+                "The purpose behind the work.",
+                "L’objectif derrière le projet.",
+              ),
+            )}
+          </SectionHeading>
+          <div className="story-content">
+            <p>{c(project.details)}</p>
+          </div>
+          <Link className="text-link" to="/contact">
+            {c(copy("Discuss this project", "Parlons de ce projet"))} →
           </Link>
         </div>
-
+        <aside className="project-facts">
+          <span className="status-badge">{c(project.status)}</span>
+          <h2>{c(copy("Areas of focus", "Axes de travail"))}</h2>
+          <ul>
+            {project.features.map((feature) => (
+              <li key={feature.en}>{c(feature)}</li>
+            ))}
+          </ul>
+        </aside>
       </section>
-
+      <section className="section project-pagination">
+        <Link to="/projects">
+          ← {c(copy("All projects", "Tous les projets"))}
+        </Link>
+        <Link to={`/projects/${next.id}`}>{next.title} →</Link>
+      </section>
     </main>
   );
 }

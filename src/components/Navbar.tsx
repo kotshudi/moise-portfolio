@@ -1,71 +1,78 @@
-﻿import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { copy, useCopy } from "../content";
 import LanguageSwitcher from "./LanguageSwitcher";
-
 export default function Navbar() {
   const { t } = useTranslation();
+  const c = useCopy();
+  const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const menuButton = useRef<HTMLButtonElement>(null);
   const closeMenu = () => setMenuOpen(false);
-
+  useEffect(() => {
+    function onEscape(event: KeyboardEvent) {
+      if (event.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+        menuButton.current?.focus();
+      }
+    }
+    document.addEventListener("keydown", onEscape);
+    return () => document.removeEventListener("keydown", onEscape);
+  }, [menuOpen]);
+  const links = [
+    ["/", "home"],
+    ["/about", "about"],
+    ["/biography", "journey"],
+    ["/career", "career"],
+    ["/education", "education"],
+    ["/projects", "projects"],
+    ["/skills", "skills"],
+    ["/contact", "contact"],
+  ];
   return (
-    <header className="navbar">
+    <header
+      className={`navbar ${pathname === "/" ? "navbar-home" : "navbar-page"}`}
+    >
       <div className="navbar-inner">
-
         <NavLink to="/" className="brand" onClick={closeMenu}>
           <span className="brand-mark">MK</span>
           <span className="brand-name">Moise Katemba</span>
         </NavLink>
-
         <button
+          ref={menuButton}
           type="button"
-          className="mobile-menu-button"
+          className={`mobile-menu-button ${menuOpen ? "is-open" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
+          aria-label={c(
+            menuOpen
+              ? copy("Close navigation", "Fermer le menu")
+              : copy("Open navigation", "Ouvrir le menu"),
+          )}
           aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span />
+          <span />
+          <span />
         </button>
-
-        <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <NavLink to="/" onClick={closeMenu}>
-            {t("nav.home")}
-          </NavLink>
-
-          <NavLink to="/about" onClick={closeMenu}>
-            {t("nav.about")}
-          </NavLink>
-
-          <NavLink to="/biography" onClick={closeMenu}>
-            {t("nav.journey")}
-          </NavLink>
-
-          <NavLink to="/career" onClick={closeMenu}>
-            {t("nav.career")}
-          </NavLink>
-
-          <NavLink to="/education" onClick={closeMenu}>
-            {t("nav.education")}
-          </NavLink>
-
-          <NavLink to="/projects" onClick={closeMenu}>
-            {t("nav.projects")}
-          </NavLink>
-
-          <NavLink to="/skills" onClick={closeMenu}>
-            {t("nav.skills")}
-          </NavLink>
-
-          <NavLink to="/contact" onClick={closeMenu}>
-            {t("nav.contact")}
-          </NavLink>
-
+        <nav
+          id="primary-navigation"
+          aria-label={c(copy("Main navigation", "Navigation principale"))}
+          className={`nav-links ${menuOpen ? "open" : ""}`}
+        >
+          {links.map(([path, key]) => (
+            <NavLink
+              key={path}
+              to={path}
+              end={path === "/"}
+              onClick={closeMenu}
+            >
+              {t(`nav.${key}`)}
+            </NavLink>
+          ))}
           <LanguageSwitcher />
         </nav>
-
       </div>
     </header>
   );
