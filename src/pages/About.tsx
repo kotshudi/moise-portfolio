@@ -34,7 +34,7 @@ export default function About() {
         <div className="about-content">
 
           <p className="section-label">
-            01 — ABOUT ME
+             ABOUT ME
           </p>
 
           <h2>

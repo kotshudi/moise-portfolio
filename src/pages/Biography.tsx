@@ -15,7 +15,7 @@
 
       <section className="section">
         <div className="section-heading">
-          <p className="section-label">01 — MY JOURNEY</p>
+          <p className="section-label"> MY JOURNEY</p>
           <h2>
             From learning
             <span> to building.</span>
@@ -43,7 +43,7 @@
 
       <section className="section dark-section">
         <div className="section-heading">
-          <p className="section-label">02 — MILESTONES</p>
+          <p className="section-label"> MILESTONES</p>
           <h2>
             Moments that
             <span> shaped me.</span>

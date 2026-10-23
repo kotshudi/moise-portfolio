@@ -19,7 +19,7 @@
       <section className="section">
 
         <div className="section-heading">
-          <p className="section-label">01 — EXPERIENCE</p>
+          <p className="section-label">EXPERIENCE</p>
 
           <h2>
             Where I have

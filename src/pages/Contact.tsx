@@ -24,7 +24,7 @@
         <div className="section-heading">
 
           <p className="section-label">
-            01 — GET IN TOUCH
+            GET IN TOUCH
           </p>
 
           <h2>

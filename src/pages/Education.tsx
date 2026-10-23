@@ -19,7 +19,7 @@
       <section className="section">
 
         <div className="section-heading">
-          <p className="section-label">01 — EDUCATION</p>
+          <p className="section-label">EDUCATION</p>
           <h2>
             Knowledge becomes
             <span> useful through practice.</span>
@@ -29,7 +29,7 @@
         <div className="education-grid">
 
           <article className="value-card">
-            <span>01</span>
+           
             <h3>Applied Business Management</h3>
             <p>
               Studies focused on business, management, entrepreneurship
@@ -38,7 +38,7 @@
           </article>
 
           <article className="value-card">
-            <span>02</span>
+      
             <h3>BYU–Pathway Worldwide</h3>
             <p>
               Academic development through online university education
@@ -47,7 +47,7 @@
           </article>
 
           <article className="value-card">
-            <span>03</span>
+           
             <h3>Technology Training</h3>
             <p>
               Training across Microsoft technologies, programming,

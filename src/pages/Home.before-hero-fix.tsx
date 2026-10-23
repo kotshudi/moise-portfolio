@@ -70,7 +70,7 @@ export default function Home() {
       <section className="home-introduction section">
 
         <div className="section-label">
-          01 — WHO I AM
+          WHO I AM
         </div>
 
         <div className="intro-grid">
@@ -102,13 +102,13 @@ export default function Home() {
       <section className="home-pockets section">
 
         <div className="section-label">
-          02 — ENTER MY WORLD
+           ENTER MY WORLD
         </div>
 
         <div className="pocket-grid">
 
           <Link to="/biography" className="pocket-card">
-            <span>01</span>
+           
             <h3>My Story</h3>
             <p>
               The experiences, challenges, people and moments
@@ -118,7 +118,7 @@ export default function Home() {
           </Link>
 
           <Link to="/career" className="pocket-card">
-            <span>02</span>
+            
             <h3>Career</h3>
             <p>
               My professional journey, responsibilities,
@@ -128,7 +128,7 @@ export default function Home() {
           </Link>
 
           <Link to="/education" className="pocket-card">
-            <span>03</span>
+           
             <h3>Education</h3>
             <p>
               Academic studies, professional training,
@@ -138,7 +138,7 @@ export default function Home() {
           </Link>
 
           <Link to="/projects" className="pocket-card">
-            <span>04</span>
+           
             <h3>Projects</h3>
             <p>
               Businesses, platforms and ideas that I am

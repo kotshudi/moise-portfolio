@@ -1,0 +1,272 @@
+﻿.projects-editor-page {
+  min-height: 100vh;
+  background: #f8f7f3;
+  color: #171717;
+  padding: 56px 6%;
+}
+
+.projects-editor-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.projects-eyebrow {
+  margin: 0 0 10px;
+  color: #b08a38;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.projects-editor-header h1 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.projects-editor-header h1 span {
+  color: #b08a38;
+}
+
+.projects-subtitle {
+  max-width: 650px;
+  margin: 18px 0 0;
+  color: #686868;
+  line-height: 1.7;
+}
+
+.projects-add-button,
+.projects-empty button,
+.projects-save-button {
+  border: 0;
+  background: #171717;
+  color: #fff;
+  padding: 15px 22px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.projects-add-button:hover,
+.projects-empty button:hover,
+.projects-save-button:hover {
+  background: #b08a38;
+}
+
+.projects-message {
+  margin-bottom: 24px;
+  padding: 16px 18px;
+  border-left: 3px solid #b08a38;
+  background: #fff;
+  color: #444;
+}
+
+.projects-empty {
+  padding: 70px 30px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e5e1d8;
+}
+
+.projects-empty-icon {
+  margin-bottom: 18px;
+  color: #b08a38;
+  font-size: 42px;
+}
+
+.projects-empty h2 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.projects-empty p {
+  margin: 12px 0 26px;
+  color: #686868;
+}
+
+.projects-list {
+  display: grid;
+  gap: 28px;
+}
+
+.project-editor-card {
+  background: #fff;
+  border: 1px solid #e5e1d8;
+  padding: 32px;
+}
+
+.project-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e9e6df;
+}
+
+.project-number {
+  color: #b08a38;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.project-card-header h2 {
+  margin: 8px 0 0;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+.project-delete-button {
+  border: 1px solid #ddd8ce;
+  background: transparent;
+  color: #777;
+  padding: 10px 14px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+.project-delete-button:hover {
+  border-color: #171717;
+  color: #171717;
+}
+
+.project-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.project-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.project-field label {
+  color: #333;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-field input,
+.project-field select,
+.project-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ddd8ce;
+  background: #faf9f6;
+  color: #171717;
+  padding: 14px 15px;
+  font: inherit;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.project-field textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.project-field input:focus,
+.project-field select:focus,
+.project-field textarea:focus {
+  border-color: #b08a38;
+  background: #fff;
+}
+
+.project-field small {
+  color: #888;
+  line-height: 1.5;
+}
+
+.project-featured {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #333;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.project-featured input {
+  width: 18px;
+  height: 18px;
+  accent-color: #b08a38;
+}
+
+.projects-save-area {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  padding-bottom: 50px;
+}
+
+.projects-save-button {
+  min-width: 190px;
+}
+
+.projects-save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.projects-loading {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  color: #686868;
+}
+
+@media (max-width: 800px) {
+  .projects-editor-page {
+    padding: 40px 5%;
+  }
+
+  .projects-editor-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .projects-add-button {
+    width: 100%;
+  }
+
+  .project-editor-card {
+    padding: 22px;
+  }
+
+  .project-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-field.full-width {
+    grid-column: auto;
+  }
+
+  .project-card-header {
+    flex-direction: column;
+  }
+
+  .project-delete-button {
+    width: 100%;
+  }
+}
