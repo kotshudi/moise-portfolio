@@ -1,109 +1,93 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-import { auth } from "./firebase";
-import "./Login.css";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FirebaseError } from "firebase/app";
+import { auth } from "../firebase/config";
+import "./Workspace.css";
 export default function Login() {
   const navigate = useNavigate();
-
+  const location = useLocation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    setError("");
-    setLoading(true);
-
-    try {
-      const result = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-
-      console.log("LOGIN SUCCESS:", result.user.email);
-
-      navigate("/admin", { replace: true });
-    } catch (err: any) {
-      console.error("FIREBASE LOGIN ERROR:", err);
-      console.error("FIREBASE ERROR CODE:", err?.code);
-      console.error("FIREBASE ERROR MESSAGE:", err?.message);
-
-      setError(
-        err?.code
-          ? `${err.code}: ${err.message}`
-          : "Login failed. Check the browser console."
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <div className="admin-login-page">
-      <div className="admin-login-card">
-
-        <div className="admin-login-header">
-          <span className="admin-eyebrow">
-            KATEMBATIC FFF
-          </span>
-
-          <h1>Admin Portal</h1>
-
-          <p>
-            Manage your personal portfolio website.
-          </p>
+    <main className="cms-login">
+      <section className="cms-login-story">
+        <Link to="/" className="cms-brand">
+          <span>MK</span>
+          <strong>Moise Katemba</strong>
+        </Link>
+        <div>
+          <p className="cms-eyebrow">YOUR CONTENT STUDIO</p>
+          <h1>
+            Keep your story
+            <br />
+            moving forward.
+          </h1>
+          <p>Manage your profile, experience and projects in one place.</p>
         </div>
-
-        <form onSubmit={handleLogin}>
-
-          <label htmlFor="email">
-            Email
-          </label>
-
+        <p>Powered by your existing Firebase project.</p>
+      </section>
+      <section className="cms-login-form">
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            setLoading(true);
+            setError("");
+            try {
+              await signInWithEmailAndPassword(auth, email.trim(), password);
+              setPassword("");
+              const from = (location.state as { from?: string } | null)?.from;
+              navigate(from?.startsWith("/admin") ? from : "/admin", {
+                replace: true,
+              });
+            } catch (e) {
+              setError(
+                e instanceof FirebaseError &&
+                  e.code === "auth/too-many-requests"
+                  ? "Too many sign-in attempts. Please wait before trying again."
+                  : "Unable to sign in. Check your email, password and connection.",
+              );
+            } finally {
+              setLoading(false);
+            }
+          }}
+        >
+          <p className="cms-eyebrow">ADMINISTRATOR ACCESS</p>
+          <h2>Welcome back.</h2>
+          <p>Sign in with your Firebase administrator account.</p>
+          <label htmlFor="admin-email">Email address</label>
           <input
-            id="email"
+            id="admin-email"
             type="email"
-            autoComplete="email"
-            placeholder="Admin email"
+            autoComplete="username"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-
-          <label htmlFor="password">
-            Password
-          </label>
-
+          <label htmlFor="admin-password">Password</label>
           <input
-            id="password"
+            id="admin-password"
             type="password"
             autoComplete="current-password"
-            placeholder="Your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-
           {error && (
-            <div className="admin-error">
+            <p className="cms-alert error" role="alert">
               {error}
-            </div>
+            </p>
           )}
-
-          <button
-            type="submit"
-            disabled={loading}
-          >
-            {loading ? "SIGNING IN..." : "SIGN IN"}
+          <button className="cms-primary" disabled={loading}>
+            {loading ? "Signing in…" : "Sign in"}
           </button>
-
+          <Link className="cms-back" to="/">
+            ← Back to website
+          </Link>
         </form>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

@@ -1,29 +1,30 @@
-﻿import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-
+import { Link } from "react-router-dom";
+import { useWords } from "../lib/useWords";
+import { usePortfolio } from "../context/PortfolioContext";
 export default function Footer() {
-  const { t } = useTranslation();
-
+  const w = useWords();
+  const { content, loading, error } = usePortfolio();
   return (
     <footer className="site-footer">
       <div className="footer-inner">
         <div>
-          <div className="footer-brand">MK</div>
+          <span className="footer-brand">MK</span>
           <p>Moise Diangelo Katemba</p>
-          <span>Educator · Entrepreneur · Developer</span>
+          {!loading && !error && <span>{content.profile.title}</span>}
         </div>
-
-        <div className="footer-links">
-          <Link to="/about">{t("nav.about")}</Link>
-          <Link to="/career">{t("nav.career")}</Link>
-          <Link to="/projects">{t("nav.projects")}</Link>
-          <Link to="/contact">{t("nav.contact")}</Link>
-        </div>
-
+        <nav aria-label={w("Footer navigation", "Navigation de pied de page")}>
+          <Link to="/projects">{w("Selected work", "Projets")}</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/admin">{w("Admin access", "Accès administrateur")}</Link>
+        </nav>
         <div className="footer-copy">
-          © {new Date().getFullYear()} Moise Diangelo Katemba.
-          <br />
-          {t("footer.rights")}
+          <p>© {new Date().getFullYear()} Moise Diangelo Katemba.</p>
+          <p>
+            {w(
+              "Built with purpose in Kinshasa.",
+              "Créé avec conviction à Kinshasa.",
+            )}
+          </p>
         </div>
       </div>
     </footer>

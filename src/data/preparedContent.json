@@ -1,0 +1,672 @@
+{
+  "profile": {
+    "name": "Moise Diangelo Katemba",
+    "title": "Educator · Entrepreneur · Developer",
+    "bio": "Based in Kinshasa, I connect education, entrepreneurship and technology to create useful tools. I teach at Graceland International English School, support English learners and develop Katembatic projects while continuing my studies in Applied Business Management.",
+    "location": "Kinshasa, D.R. Congo",
+    "email": "moisekatemba@katembaticfff.com",
+    "phone": "",
+    "website": "https://katembaticfff.com",
+    "fr": {
+      "name": "Moise Diangelo Katemba",
+      "title": "Éducateur · Entrepreneur · Développeur",
+      "bio": "Basé à Kinshasa, je relie l’enseignement, l’entrepreneuriat et la technologie pour créer des outils utiles. J’enseigne à Graceland International English School, j’accompagne des apprenants d’anglais et je développe les projets Katembatic tout en poursuivant mes études en gestion appliquée des entreprises.",
+      "location": "Kinshasa, R.D. Congo",
+      "email": "moisekatemba@katembaticfff.com",
+      "phone": "",
+      "website": "https://katembaticfff.com"
+    }
+  },
+  "biography": {
+    "headline": "Learn, build and serve.",
+    "introduction": "My journey brings together teaching, missionary service, administration and digital development. I am interested in solutions that help people learn, organise their work and turn their ideas into action.",
+    "journey": "Teaching myself the piano taught me patience and persistence. That curiosity still guides how I learn new skills.\n\nFrom June 2020 to February 2022, I served as a seminary teacher, preparing lessons for groups of more than forty students. From March 2022 to April 2024, I served as a full-time missionary in the Ghana Accra West Mission, including responsibilities as a district leader. These roles developed my communication, organisation and ability to train others.\n\nIn Kinshasa, I combine school teaching, private English tutoring, remote data work and business studies. Within Katembatic FFF, founded by my father Frédéric Nzengete Katemba, I contribute to the development of the initiatives and lead KSF.\n\nThrough OpenPath, KBB and my other digital projects, I apply what I learn to practical needs: developing English skills, presenting a business online and organising day-to-day work.",
+    "mission": "Help people develop their skills and create practical tools for education, business and community life.",
+    "vision": "Contribute to a Katembatic ecosystem where learning, service and entrepreneurship create lasting opportunities.",
+    "values": "Faith and integrity\nFamily and responsibility\nService and respect for people\nContinuous learning\nPersistence and practical work",
+    "fr": {
+      "headline": "Apprendre, construire et servir.",
+      "introduction": "Mon parcours réunit l’enseignement, le service missionnaire, l’administration et le développement numérique. Je m’intéresse aux solutions qui aident les personnes à apprendre, à mieux s’organiser et à transformer leurs idées en actions.",
+      "journey": "Apprendre le piano par moi-même m’a enseigné la patience et la persévérance. Cette curiosité m’accompagne encore dans l’apprentissage de nouvelles compétences.\n\nDe juin 2020 à février 2022, j’ai servi comme instructeur de séminaire, en préparant des leçons pour des groupes de plus de quarante élèves. De mars 2022 à avril 2024, j’ai servi comme missionnaire à plein temps dans la mission de Ghana Accra Ouest, notamment comme dirigeant de district. Ces responsabilités ont développé ma communication, mon organisation et ma capacité à former les autres.\n\nÀ Kinshasa, je combine l’enseignement scolaire, les cours particuliers d’anglais, le travail à distance sur les données et les études commerciales. Au sein de Katembatic FFF, fondé par mon père Frédéric Nzengete Katemba, je contribue au développement des initiatives et je dirige KSF.\n\nAvec OpenPath, KBB et mes autres projets numériques, j’applique ce que j’apprends à des besoins concrets : progresser en anglais, présenter une entreprise en ligne et organiser le travail quotidien.",
+      "mission": "Aider les personnes à développer leurs compétences et créer des outils pratiques pour l’éducation, les entreprises et la communauté.",
+      "vision": "Contribuer à un écosystème Katembatic où l’apprentissage, le service et l’entrepreneuriat ouvrent des perspectives durables.",
+      "values": "Foi et intégrité\nFamille et responsabilité\nService et respect des personnes\nApprentissage continu\nPersévérance et travail concret"
+    }
+  },
+  "career": {
+    "entries": [
+      {
+        "id": "graceland",
+        "company": "Graceland International English School",
+        "position": "Teacher",
+        "location": "Kinshasa, D.R. Congo",
+        "startDate": "2024-10",
+        "endDate": "",
+        "description": "Teach school subjects, prepare lesson materials and support pupils’ understanding across primary and junior secondary classes.",
+        "achievements": "Lesson preparation, classroom teaching and learner support."
+      },
+      {
+        "id": "tutoring",
+        "company": "Private English tutoring / OpenPath",
+        "position": "English educator & tutor",
+        "location": "Kinshasa, D.R. Congo",
+        "startDate": "",
+        "endDate": "",
+        "description": "Support learners of different ages through English lessons adapted to their level, speaking practice and progressive learning activities.",
+        "achievements": "Individual tutoring, practical communication and curriculum development."
+      },
+      {
+        "id": "springboard",
+        "company": "Springboard / Bloom",
+        "position": "Data entry specialist & indexer",
+        "location": "Remote",
+        "startDate": "2024-06",
+        "endDate": "",
+        "description": "Work with digital records and indexing tasks that require accuracy, consistency and organised remote working habits.",
+        "achievements": "Data processing, indexing and record management."
+      },
+      {
+        "id": "katembatic",
+        "company": "Katembatic FFF / KSF",
+        "position": "Project development & KSF CEO",
+        "location": "Kinshasa, D.R. Congo",
+        "startDate": "",
+        "endDate": "",
+        "description": "Contribute to education, finance and business initiatives. Lead KSF and develop websites, learning platforms and operational tools within the Katembatic ecosystem.",
+        "achievements": "Project planning, team responsibilities, reporting and digital development."
+      },
+      {
+        "id": "mission",
+        "company": "Ghana Accra West Mission",
+        "position": "Full-time missionary & district leader",
+        "location": "Ghana",
+        "startDate": "2022-03",
+        "endDate": "2024-04",
+        "description": "Served communities, coordinated district activities and trained other missionaries.",
+        "achievements": "Training, communication, organisation and leadership."
+      },
+      {
+        "id": "seminary",
+        "company": "The Church of Jesus Christ of Latter-day Saints",
+        "position": "Seminary teacher",
+        "location": "Kinshasa, D.R. Congo",
+        "startDate": "2020-06",
+        "endDate": "2022-02",
+        "description": "Prepared and taught lessons for groups of more than forty students.",
+        "achievements": "Lesson planning, group facilitation and student engagement."
+      }
+    ],
+    "fr": {
+      "entries": [
+        {
+          "id": "graceland",
+          "company": "Graceland International English School",
+          "position": "Enseignant",
+          "location": "Kinshasa, D.R. Congo",
+          "startDate": "2024-10",
+          "endDate": "",
+          "description": "J’enseigne différentes matières, je prépare les supports pédagogiques et j’accompagne les élèves du primaire et du premier cycle du secondaire.",
+          "achievements": "Préparation des leçons, enseignement et accompagnement des élèves."
+        },
+        {
+          "id": "tutoring",
+          "company": "Private English tutoring / OpenPath",
+          "position": "Enseignant et tuteur d’anglais",
+          "location": "Kinshasa, D.R. Congo",
+          "startDate": "",
+          "endDate": "",
+          "description": "J’accompagne des apprenants d’âges variés avec des cours adaptés à leur niveau, des activités orales et une progression structurée.",
+          "achievements": "Cours particuliers, communication pratique et développement de programmes."
+        },
+        {
+          "id": "springboard",
+          "company": "Springboard / Bloom",
+          "position": "Spécialiste de saisie de données et indexeur",
+          "location": "À distance",
+          "startDate": "2024-06",
+          "endDate": "",
+          "description": "Je travaille sur des dossiers numériques et des tâches d’indexation qui demandent précision, régularité et organisation à distance.",
+          "achievements": "Traitement de données, indexation et gestion des dossiers."
+        },
+        {
+          "id": "katembatic",
+          "company": "Katembatic FFF / KSF",
+          "position": "Développement de projets et CEO de KSF",
+          "location": "Kinshasa, D.R. Congo",
+          "startDate": "",
+          "endDate": "",
+          "description": "Je contribue aux initiatives d’éducation, de finance et d’entreprise. Je dirige KSF et développe des sites, des plateformes d’apprentissage et des outils de gestion au sein de l’écosystème Katembatic.",
+          "achievements": "Planification, coordination des responsabilités, rapports et développement numérique."
+        },
+        {
+          "id": "mission",
+          "company": "Ghana Accra West Mission",
+          "position": "Missionnaire à plein temps et dirigeant de district",
+          "location": "Ghana",
+          "startDate": "2022-03",
+          "endDate": "2024-04",
+          "description": "J’ai servi les communautés, coordonné les activités du district et formé d’autres missionnaires.",
+          "achievements": "Formation, communication, organisation et leadership."
+        },
+        {
+          "id": "seminary",
+          "company": "The Church of Jesus Christ of Latter-day Saints",
+          "position": "Instructeur de séminaire",
+          "location": "Kinshasa, D.R. Congo",
+          "startDate": "2020-06",
+          "endDate": "2022-02",
+          "description": "Je préparais et enseignais des leçons à des groupes de plus de quarante élèves.",
+          "achievements": "Préparation pédagogique, animation de groupe et participation des élèves."
+        }
+      ]
+    }
+  },
+  "education": {
+    "entries": [
+      {
+        "id": "degree",
+        "institution": "BYU–Idaho / BYU–Pathway Worldwide",
+        "program": "Applied Business Management — in progress",
+        "location": "Online",
+        "startDate": "2024",
+        "endDate": "",
+        "description": "Business studies covering entrepreneurship, management, accounting and practical decision-making.",
+        "achievements": "Applying coursework through KBB, OpenPath and other Katembatic projects."
+      },
+      {
+        "id": "entrepreneurship",
+        "institution": "BYU–Pathway Worldwide",
+        "program": "Entrepreneurship certificate",
+        "location": "Online",
+        "startDate": "",
+        "endDate": "2024-11",
+        "description": "Completed an entrepreneurship certificate focused on developing business knowledge and putting ideas into practice.",
+        "achievements": "Completed November 2024."
+      },
+      {
+        "id": "microsoft",
+        "institution": "Bloom / Springboard",
+        "program": "Microsoft training programme",
+        "location": "Professional training",
+        "startDate": "",
+        "endDate": "",
+        "description": "Completed nine months of Microsoft training to strengthen digital working skills.",
+        "achievements": "Microsoft tools, digital workflows and practical workplace skills."
+      },
+      {
+        "id": "technical",
+        "institution": "Independent & online learning",
+        "program": "Cybersecurity, Python automation & web development",
+        "location": "Continuous learning",
+        "startDate": "",
+        "endDate": "",
+        "description": "Continuing study of Google Cybersecurity, IT Automation with Python and modern web development.",
+        "achievements": "Practical application through React, TypeScript, Firebase and Python projects."
+      }
+    ],
+    "fr": {
+      "entries": [
+        {
+          "id": "degree",
+          "institution": "BYU–Idaho / BYU–Pathway Worldwide",
+          "program": "Gestion appliquée des entreprises — en cours",
+          "location": "En ligne",
+          "startDate": "2024",
+          "endDate": "",
+          "description": "Études commerciales en entrepreneuriat, gestion, comptabilité et prise de décision.",
+          "achievements": "Mise en pratique des cours à travers KBB, OpenPath et les autres projets Katembatic."
+        },
+        {
+          "id": "entrepreneurship",
+          "institution": "BYU–Pathway Worldwide",
+          "program": "Certificat en entrepreneuriat",
+          "location": "En ligne",
+          "startDate": "",
+          "endDate": "2024-11",
+          "description": "Certificat en entrepreneuriat consacré au développement des connaissances commerciales et à la mise en pratique des idées.",
+          "achievements": "Terminé en novembre 2024."
+        },
+        {
+          "id": "microsoft",
+          "institution": "Bloom / Springboard",
+          "program": "Programme de formation Microsoft",
+          "location": "Formation professionnelle",
+          "startDate": "",
+          "endDate": "",
+          "description": "Neuf mois de formation Microsoft pour renforcer les compétences de travail numérique.",
+          "achievements": "Outils Microsoft, méthodes de travail numériques et compétences professionnelles."
+        },
+        {
+          "id": "technical",
+          "institution": "Independent & online learning",
+          "program": "Cybersécurité, automatisation Python et développement web",
+          "location": "Apprentissage continu",
+          "startDate": "",
+          "endDate": "",
+          "description": "Poursuite de formations en cybersécurité Google, en automatisation informatique avec Python et en développement web.",
+          "achievements": "Application pratique dans des projets React, TypeScript, Firebase et Python."
+        }
+      ]
+    }
+  },
+  "projects": {
+    "entries": [
+      {
+        "id": "kbb",
+        "title": "Katembatic Business Boost",
+        "category": "Business & web",
+        "tagline": "Business websites built around real needs.",
+        "status": "In development",
+        "technologies": "React · TypeScript · Express · Python",
+        "description": "Websites and digital services for small businesses, including reusable website foundations adapted to each client.",
+        "story": "KBB brings together my business studies and web development work. I am developing a service that helps small businesses explain their offer, present their work and make it easier for customers to contact them.",
+        "startDate": "",
+        "endDate": "",
+        "liveUrl": "",
+        "githubUrl": "",
+        "imageUrl": "",
+        "featured": true
+      },
+      {
+        "id": "openpath",
+        "title": "OpenPath",
+        "category": "Education",
+        "tagline": "Practical English. New possibilities.",
+        "status": "Teaching programme & platform",
+        "technologies": "English education · React · Firebase",
+        "description": "An English teaching initiative supported by structured lessons, enrollment tools and a developing learning platform.",
+        "story": "OpenPath grows out of my classroom teaching and tutoring. I work on progressive learning materials and digital experiences for students, teachers and parents.",
+        "startDate": "",
+        "endDate": "",
+        "liveUrl": "",
+        "githubUrl": "",
+        "imageUrl": "",
+        "featured": true
+      },
+      {
+        "id": "ksf",
+        "title": "Katemba Solidarity Funds",
+        "category": "Finance & community",
+        "tagline": "Solidarity supported by clear records.",
+        "status": "In development",
+        "technologies": "Member records · Reporting · Web applications",
+        "description": "A savings and lending initiative focused on solidarity, contribution records and shared responsibility.",
+        "story": "As KSF CEO, I work on its organisation, team responsibilities and digital platform. The tools support member records, contributions and loan follow-up, with payments handled outside the application.",
+        "startDate": "",
+        "endDate": "",
+        "liveUrl": "",
+        "githubUrl": "",
+        "imageUrl": "",
+        "featured": true
+      },
+      {
+        "id": "ksh",
+        "title": "Katembatic Store Hub",
+        "category": "Commerce",
+        "tagline": "A simpler online shopping experience.",
+        "status": "In development",
+        "technologies": "E-commerce · Web interfaces",
+        "description": "An online store project exploring product discovery and ordering within the Katembatic ecosystem.",
+        "story": "KSH is the commerce branch of the Katembatic ecosystem. My work focuses on translating the shopping concept into a practical digital experience.",
+        "startDate": "",
+        "endDate": "",
+        "liveUrl": "",
+        "githubUrl": "",
+        "imageUrl": "",
+        "featured": false
+      },
+      {
+        "id": "ktrack",
+        "title": "K-Track",
+        "category": "Education technology",
+        "tagline": "Learning progress made visible.",
+        "status": "In development",
+        "technologies": "React · Express · SQLite",
+        "description": "A tool for student progress, skills and fee records.",
+        "story": "K-Track responds to the administrative work behind teaching. It is designed to help organise learner records, track progress and prepare reports from actual student information.",
+        "startDate": "",
+        "endDate": "",
+        "liveUrl": "",
+        "githubUrl": "",
+        "imageUrl": "",
+        "featured": false
+      },
+      {
+        "id": "kcompass",
+        "title": "K-Compass",
+        "category": "Productivity",
+        "tagline": "Daily priorities with a clear direction.",
+        "status": "In development",
+        "technologies": "Express · Prisma · PostgreSQL",
+        "description": "A personal planning project based on my 100-point daily method.",
+        "story": "K-Compass connects daily activities with priorities and goals. I am developing its account and planning foundations to support a clearer review of how a day was spent.",
+        "startDate": "",
+        "endDate": "",
+        "liveUrl": "",
+        "githubUrl": "",
+        "imageUrl": "",
+        "featured": false
+      },
+      {
+        "id": "kstream",
+        "title": "K-Stream",
+        "category": "Mobile development",
+        "tagline": "Exploring media on mobile.",
+        "status": "Prototype",
+        "technologies": "Expo · React Native · TypeScript",
+        "description": "A mobile media application with an initial home screen and playback features in development.",
+        "story": "K-Stream is a practical mobile development project. I am working on navigation, content discovery and video playback using Expo and React Native.",
+        "startDate": "",
+        "endDate": "",
+        "liveUrl": "",
+        "githubUrl": "",
+        "imageUrl": "",
+        "featured": false
+      },
+      {
+        "id": "glies",
+        "title": "Graceland International English School",
+        "category": "Client work",
+        "tagline": "From family applications to admissions review.",
+        "status": "Website & admissions system",
+        "technologies": "React · TypeScript · Express · Google Sheets",
+        "description": "A school website with multi-step registration, an admissions dashboard and Google Sheets reporting.",
+        "story": "This client project connects a public school website with the administrative admissions workflow. It includes application records, assessment and placement updates, and reporting for school staff.",
+        "startDate": "",
+        "endDate": "",
+        "liveUrl": "",
+        "githubUrl": "",
+        "imageUrl": "",
+        "featured": false
+      }
+    ],
+    "fr": {
+      "entries": [
+        {
+          "id": "kbb",
+          "title": "Katembatic Business Boost",
+          "category": "Entreprise et web",
+          "tagline": "Des sites web adaptés aux besoins des entreprises.",
+          "status": "En développement",
+          "technologies": "React · TypeScript · Express · Python",
+          "description": "Sites web et services numériques pour les petites entreprises, avec des bases réutilisables adaptées à chaque client.",
+          "story": "KBB réunit mes études commerciales et le développement web. Je développe un service pour aider les petites entreprises à présenter leur offre et leurs réalisations, et à faciliter le contact avec leurs clients.",
+          "startDate": "",
+          "endDate": "",
+          "liveUrl": "",
+          "githubUrl": "",
+          "imageUrl": "",
+          "featured": true
+        },
+        {
+          "id": "openpath",
+          "title": "OpenPath",
+          "category": "Éducation",
+          "tagline": "Un anglais pratique. De nouvelles possibilités.",
+          "status": "Programme et plateforme",
+          "technologies": "English education · React · Firebase",
+          "description": "Une initiative d’enseignement de l’anglais avec des leçons structurées, des outils d’inscription et une plateforme en développement.",
+          "story": "OpenPath est issu de mon expérience d’enseignant et de tuteur. Je développe des supports progressifs et des espaces numériques pour les élèves, les enseignants et les parents.",
+          "startDate": "",
+          "endDate": "",
+          "liveUrl": "",
+          "githubUrl": "",
+          "imageUrl": "",
+          "featured": true
+        },
+        {
+          "id": "ksf",
+          "title": "Katemba Solidarity Funds",
+          "category": "Finance et communauté",
+          "tagline": "La solidarité soutenue par des comptes clairs.",
+          "status": "En développement",
+          "technologies": "Member records · Reporting · Web applications",
+          "description": "Une initiative d’épargne et de crédit axée sur la solidarité, le suivi des cotisations et la responsabilité collective.",
+          "story": "En tant que CEO de KSF, je travaille sur l’organisation, les responsabilités de l’équipe et la plateforme numérique. Les outils couvrent les membres, les cotisations et le suivi des prêts ; les paiements sont effectués en dehors de l’application.",
+          "startDate": "",
+          "endDate": "",
+          "liveUrl": "",
+          "githubUrl": "",
+          "imageUrl": "",
+          "featured": true
+        },
+        {
+          "id": "ksh",
+          "title": "Katembatic Store Hub",
+          "category": "Commerce",
+          "tagline": "Une expérience d’achat en ligne plus simple.",
+          "status": "En développement",
+          "technologies": "E-commerce · Web interfaces",
+          "description": "Un projet de boutique en ligne consacré à la découverte de produits et aux commandes dans l’écosystème Katembatic.",
+          "story": "KSH est la branche commerciale de l’écosystème Katembatic. Mon travail consiste à transformer le concept de boutique en une expérience numérique pratique.",
+          "startDate": "",
+          "endDate": "",
+          "liveUrl": "",
+          "githubUrl": "",
+          "imageUrl": "",
+          "featured": false
+        },
+        {
+          "id": "ktrack",
+          "title": "K-Track",
+          "category": "Technologie éducative",
+          "tagline": "Rendre les progrès visibles.",
+          "status": "En développement",
+          "technologies": "React · Express · SQLite",
+          "description": "Un outil de suivi des progrès, des compétences et des frais des élèves.",
+          "story": "K-Track répond aux besoins administratifs de l’enseignement. Il vise à organiser les dossiers, suivre les progrès et préparer des rapports à partir des informations réelles des élèves.",
+          "startDate": "",
+          "endDate": "",
+          "liveUrl": "",
+          "githubUrl": "",
+          "imageUrl": "",
+          "featured": false
+        },
+        {
+          "id": "kcompass",
+          "title": "K-Compass",
+          "category": "Productivité",
+          "tagline": "Des priorités quotidiennes avec une direction claire.",
+          "status": "En développement",
+          "technologies": "Express · Prisma · PostgreSQL",
+          "description": "Un projet de planification personnelle fondé sur ma méthode quotidienne sur 100 points.",
+          "story": "K-Compass relie les activités quotidiennes aux priorités et aux objectifs. Je développe ses comptes et ses fonctions de planification pour faciliter le bilan de chaque journée.",
+          "startDate": "",
+          "endDate": "",
+          "liveUrl": "",
+          "githubUrl": "",
+          "imageUrl": "",
+          "featured": false
+        },
+        {
+          "id": "kstream",
+          "title": "K-Stream",
+          "category": "Développement mobile",
+          "tagline": "Explorer les médias sur mobile.",
+          "status": "Prototype",
+          "technologies": "Expo · React Native · TypeScript",
+          "description": "Une application mobile multimédia avec un premier écran d’accueil et des fonctions de lecture en développement.",
+          "story": "K-Stream est un projet pratique de développement mobile. Je travaille sur la navigation, la découverte de contenus et la lecture vidéo avec Expo et React Native.",
+          "startDate": "",
+          "endDate": "",
+          "liveUrl": "",
+          "githubUrl": "",
+          "imageUrl": "",
+          "featured": false
+        },
+        {
+          "id": "glies",
+          "title": "Graceland International English School",
+          "category": "Projet client",
+          "tagline": "Des candidatures des familles au suivi des admissions.",
+          "status": "Site et système d’admission",
+          "technologies": "React · TypeScript · Express · Google Sheets",
+          "description": "Un site scolaire avec inscription en plusieurs étapes, tableau de bord des admissions et rapports Google Sheets.",
+          "story": "Ce projet client relie le site scolaire public au parcours administratif des admissions. Il comprend les candidatures, les mises à jour des évaluations et des placements, ainsi que les rapports pour le personnel.",
+          "startDate": "",
+          "endDate": "",
+          "liveUrl": "",
+          "githubUrl": "",
+          "imageUrl": "",
+          "featured": false
+        }
+      ]
+    }
+  },
+  "skills": {
+    "entries": [
+      {
+        "id": "teaching",
+        "name": "Teaching & English tutoring",
+        "category": "Education",
+        "description": "Lesson preparation, classroom teaching, speaking practice and learner support.",
+        "level": 0
+      },
+      {
+        "id": "business",
+        "name": "Business & project planning",
+        "category": "Business",
+        "description": "Budgeting, reporting, coordination and practical entrepreneurial thinking.",
+        "level": 0
+      },
+      {
+        "id": "web",
+        "name": "Web development",
+        "category": "Technology",
+        "description": "React, TypeScript and JavaScript interfaces; experience with Firebase and Express projects.",
+        "level": 0
+      },
+      {
+        "id": "data",
+        "name": "Data entry & administration",
+        "category": "Operations",
+        "description": "Indexing, Microsoft tools, spreadsheets and careful record management.",
+        "level": 0
+      },
+      {
+        "id": "python",
+        "name": "Python automation",
+        "category": "Technology",
+        "description": "Scripts for reporting, data processing and preparing digital assets.",
+        "level": 0
+      },
+      {
+        "id": "leadership",
+        "name": "Communication & leadership",
+        "category": "People",
+        "description": "Training, team coordination and communication in English, French and Lingala.",
+        "level": 0
+      }
+    ],
+    "fr": {
+      "entries": [
+        {
+          "id": "teaching",
+          "name": "Enseignement et cours d’anglais",
+          "category": "Éducation",
+          "description": "Préparation des leçons, enseignement, pratique orale et accompagnement.",
+          "level": 0
+        },
+        {
+          "id": "business",
+          "name": "Gestion et planification de projets",
+          "category": "Entreprise",
+          "description": "Budgets, rapports, coordination et réflexion entrepreneuriale.",
+          "level": 0
+        },
+        {
+          "id": "web",
+          "name": "Développement web",
+          "category": "Technologie",
+          "description": "Interfaces React, TypeScript et JavaScript ; expérience avec Firebase et Express.",
+          "level": 0
+        },
+        {
+          "id": "data",
+          "name": "Saisie de données et administration",
+          "category": "Opérations",
+          "description": "Indexation, outils Microsoft, feuilles de calcul et gestion des dossiers.",
+          "level": 0
+        },
+        {
+          "id": "python",
+          "name": "Automatisation Python",
+          "category": "Technologie",
+          "description": "Scripts pour les rapports, le traitement de données et les ressources numériques.",
+          "level": 0
+        },
+        {
+          "id": "leadership",
+          "name": "Communication et leadership",
+          "category": "Relations humaines",
+          "description": "Formation, coordination d’équipe et communication en anglais, français et lingala.",
+          "level": 0
+        }
+      ]
+    }
+  },
+  "media": {
+    "items": [
+      {
+        "id": "portrait",
+        "title": "Moise Diangelo Katemba",
+        "imageUrl": "/images/moise-professional.jpeg",
+        "category": "Profile",
+        "caption": "Educator, entrepreneur and developer based in Kinshasa.",
+        "altText": "Portrait of Moise Diangelo Katemba",
+        "featured": true,
+        "order": 0
+      },
+      {
+        "id": "kinshasa",
+        "title": "In Kinshasa",
+        "imageUrl": "/images/moise-in-kinshasa.jpg",
+        "category": "Personal",
+        "caption": "A moment from the journey.",
+        "altText": "Moise Katemba standing and smiling",
+        "featured": false,
+        "order": 1
+      }
+    ],
+    "fr": {
+      "items": [
+        {
+          "id": "portrait",
+          "title": "Moise Diangelo Katemba",
+          "imageUrl": "/images/moise-professional.jpeg",
+          "category": "Profile",
+          "caption": "Éducateur, entrepreneur et développeur à Kinshasa.",
+          "altText": "Portrait de Moise Diangelo Katemba",
+          "featured": true,
+          "order": 0
+        },
+        {
+          "id": "kinshasa",
+          "title": "À Kinshasa",
+          "imageUrl": "/images/moise-in-kinshasa.jpg",
+          "category": "Personal",
+          "caption": "Un moment du parcours.",
+          "altText": "Moise Katemba, debout et souriant",
+          "featured": false,
+          "order": 1
+        }
+      ]
+    }
+  },
+  "settings": {
+    "heroTitle": "Building with",
+    "heroAccent": "purpose.",
+    "philosophy": "Learn. Build. Serve. Improve.",
+    "seoDescription": "Moise Diangelo Katemba, educator, entrepreneur and developer in Kinshasa. Experience, skills and Katembatic projects.",
+    "portrait": "/images/moise-professional.jpeg",
+    "defaultLanguage": "en",
+    "fr": {
+      "heroTitle": "Construire avec",
+      "heroAccent": "conviction.",
+      "philosophy": "Apprendre. Construire. Servir. Améliorer.",
+      "seoDescription": "Moise Diangelo Katemba, éducateur, entrepreneur et développeur à Kinshasa. Parcours, compétences et projets Katembatic.",
+      "portrait": "/images/moise-professional.jpeg",
+      "defaultLanguage": "en"
+    }
+  }
+}

@@ -1,4 +1,4 @@
-﻿import i18n from "i18next";
+import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 const resources = {
@@ -117,15 +117,23 @@ const resources = {
   },
 };
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: "en",
-    fallbackLng: "en",
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+let savedLanguage = "en";
+try {
+  savedLanguage =
+    localStorage.getItem("portfolio-language") === "fr" ? "fr" : "en";
+} catch {
+  /* Storage is optional. */
+}
+i18n.on("languageChanged", (language) => {
+  document.documentElement.lang = language === "fr" ? "fr" : "en";
+});
+i18n.use(initReactI18next).init({
+  resources,
+  lng: savedLanguage,
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 export default i18n;
