@@ -1,10 +1,43 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { ArrowUpRight, ArrowLeft, Mail, Check, Copy } from "lucide-react";
+import {
+  ArrowUpRight,
+  ArrowLeft,
+  Mail,
+  Check,
+  Copy,
+  GraduationCap,
+  Code2,
+  BriefcaseBusiness,
+  MapPin,
+  ShoppingBag,
+  Wallet,
+  CalendarDays,
+  Play,
+  School,
+  BookOpen,
+  Globe,
+} from "lucide-react";
 import { usePortfolio } from "../context/PortfolioContext";
 import { safeImage, safeLink } from "../lib/contentValidation";
 import { useWords } from "../lib/useWords";
+function ProjectSymbol({ id }: { id: string }) {
+  const Icon =
+    (
+      {
+        kbb: Globe,
+        openpath: BookOpen,
+        ksf: Wallet,
+        ksh: ShoppingBag,
+        ktrack: GraduationCap,
+        kcompass: CalendarDays,
+        kstream: Play,
+        glies: School,
+      } as Record<string, typeof Globe>
+    )[id] || Code2;
+  return <Icon size={36} strokeWidth={1.5} aria-hidden="true" />;
+}
 function Paragraphs({ text = "" }: { text?: string }) {
   return (
     <>
@@ -122,8 +155,15 @@ export default function PortfolioView({ page }: { page: string }) {
     <div className="projects-grid">
       {items.map((p) => (
         <article className="project-card" key={p.id}>
+          <div className="project-cover" data-project={p.id}>
+            {safeImage(p.imageUrl) ? (
+              <img src={safeImage(p.imageUrl)} alt="" loading="lazy" />
+            ) : (
+              <ProjectSymbol id={p.id} />
+            )}
+            <span className="status-badge">{p.status}</span>
+          </div>
           <p className="project-category">{p.category}</p>
-          <span className="status-badge">{p.status}</span>
           <h2>{p.title}</h2>
           <p>{p.description}</p>
           <Link className="text-link" to={`/projects/${p.id}`}>
@@ -140,12 +180,14 @@ export default function PortfolioView({ page }: { page: string }) {
       <>
         <section className="hero-section">
           <div className="hero-content">
-            <p className="eyebrow">{c.profile.name}</p>
-            <h1>
-              {c.settings.heroTitle}
-              <span>{c.settings.heroAccent}</span>
-            </h1>
-            <h2>{c.profile.title}</h2>
+            <p className="eyebrow hero-greeting">
+              {w("HELLO, I’M", "BONJOUR, JE SUIS")}
+            </p>
+            <h1>{c.profile.name}</h1>
+            <p className="hero-position">{c.profile.title}</p>
+            <h2 className="hero-headline">
+              {c.settings.heroTitle} <span>{c.settings.heroAccent}</span>
+            </h2>
             <p className="hero-description">{c.profile.bio}</p>
             <div className="hero-actions">
               <Link className="button primary" to="/projects">
@@ -156,21 +198,63 @@ export default function PortfolioView({ page }: { page: string }) {
                 {w("Let’s connect", "Échangeons")}
               </Link>
             </div>
-            <p className="hero-location">{c.profile.location}</p>
+            <p className="hero-location">
+              <MapPin size={15} aria-hidden="true" />
+              {c.profile.location}
+            </p>
           </div>
           {portrait && (
             <div className="hero-portrait">
               <img src={portrait} alt={c.profile.name} fetchPriority="high" />
               <div className="portrait-note">
+                <span className="portrait-dot" aria-hidden="true" />
                 <span>
                   {w(
-                    "A life of learning, building and service.",
-                    "Une vie d’apprentissage, de création et de service.",
+                    "Learning. Building. Giving back.",
+                    "Apprendre. Créer. Transmettre.",
                   )}
                 </span>
               </div>
             </div>
           )}
+        </section>
+        <section
+          className="practice-strip"
+          aria-label={w("Explore my work", "Découvrir mon travail")}
+        >
+          <Link to="/career">
+            <GraduationCap size={24} />
+            <span>
+              <strong>{w("Education", "Enseignement")}</strong>
+              <small>
+                {w("Helping people grow", "Accompagner la progression")}
+              </small>
+            </span>
+            <ArrowUpRight size={18} />
+          </Link>
+          <Link to="/projects">
+            <BriefcaseBusiness size={24} />
+            <span>
+              <strong>{w("Entrepreneurship", "Entrepreneuriat")}</strong>
+              <small>
+                {w(
+                  "Turning ideas into action",
+                  "Transformer les idées en actions",
+                )}
+              </small>
+            </span>
+            <ArrowUpRight size={18} />
+          </Link>
+          <Link to="/skills">
+            <Code2 size={24} />
+            <span>
+              <strong>{w("Technology", "Technologie")}</strong>
+              <small>
+                {w("Building practical tools", "Créer des outils utiles")}
+              </small>
+            </span>
+            <ArrowUpRight size={18} />
+          </Link>
         </section>
         <section className="section intro-grid">
           <div>
@@ -447,7 +531,7 @@ export default function PortfolioView({ page }: { page: string }) {
       </>
     ) : (
       <Hero
-        label="404"
+        label={w("NOT FOUND", "INTROUVABLE")}
         title={w("Project not found.", "Projet introuvable.")}
       />
     );
@@ -606,7 +690,10 @@ export default function PortfolioView({ page }: { page: string }) {
   else
     body = (
       <>
-        <Hero label="404" title={w("Page not found.", "Page introuvable.")} />
+        <Hero
+          label={w("NOT FOUND", "INTROUVABLE")}
+          title={w("Page not found.", "Page introuvable.")}
+        />
         <section className="section">
           <Link to="/" className="button primary">
             {w("Return home", "Retour à l’accueil")}

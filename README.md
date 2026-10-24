@@ -16,6 +16,10 @@ npm run build
 
 The production Firebase project is `moise-portefolio` (the spelling is intentional). The Firebase web configuration identifies this project; it is not an administrator credential. Never add service-account keys or CLI tokens to this repository.
 
+## Current design
+
+The current version uses a light background, blue accents, a contained portrait, icon-led project cards and responsive navigation. Public sections and cards have no decorative numbers. The release marker in `index.html` is `studio-blue-2026-10-24`; the old live site may still show numbered sections until Hosting is deployed. Design changes do not require re-importing or replacing saved Firestore content.
+
 ## Publish to the existing Firebase site
 
 From this repository on a computer already signed in to Firebase:
