@@ -563,3 +563,27 @@
     padding: 24px;
   }
 }
+
+.cms-edit-fields {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.cms-alert > p {
+  margin-top: 0;
+}
+.cms-primary,
+.cms-secondary,
+.cms-row-actions button {
+  min-height: 44px;
+}
+.cms-row-actions button {
+  min-width: 44px;
+}
+.cms-save-state {
+  border-radius: 20px;
+  padding: 8px 12px;
+  background: #edf2ff;
+  color: #2855e8;
+}

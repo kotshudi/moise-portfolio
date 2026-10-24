@@ -122,7 +122,8 @@ export default function Workspace() {
   const [data, setData] = useState<ContentDocument | null>(null);
   const [revision, setRevision] = useState(0);
   const [language, setLanguage] = useState("en");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [loadAttempt, setLoadAttempt] = useState(0);
   const [saving, setSaving] = useState(false);
   const [dirty, setDirty] = useState(false);
   const [message, setMessage] = useState("");
@@ -146,6 +147,8 @@ export default function Workspace() {
     setMessage("");
     setFailure("");
     setDirty(false);
+    setLoading(true);
+    setData(null);
     if (!section) {
       setData(null);
       Promise.all(
@@ -155,12 +158,18 @@ export default function Workspace() {
           if (id === loadId.current)
             setSavedSections(rows.filter((r) => r.value).map((r) => r.key));
         })
-        .catch(() =>
-          setFailure(
-            "Couldn’t read the saved content. Check your Firebase connection.",
-          ),
-        );
-      return;
+        .catch(() => {
+          if (id === loadId.current)
+            setFailure(
+              "Couldn’t read the saved content. Check your connection and retry.",
+            );
+        })
+        .finally(() => {
+          if (id === loadId.current) setLoading(false);
+        });
+      return () => {
+        loadId.current = id + 1;
+      };
     }
     setLoading(true);
     loadSection(section)
@@ -182,8 +191,15 @@ export default function Workspace() {
       .finally(() => {
         if (id === loadId.current) setLoading(false);
       });
-  }, [section]);
+    return () => {
+      loadId.current = id + 1;
+    };
+  }, [section, loadAttempt]);
   function navigateAway(event: React.MouseEvent) {
+    if (saving || applying) {
+      event.preventDefault();
+      return;
+    }
     if (dirty && !window.confirm("Discard unsaved changes in this section?"))
       event.preventDefault();
   }
@@ -199,18 +215,21 @@ export default function Workspace() {
     );
   }
   async function save() {
-    if (!data || !section) return;
+    if (!data || !section || saving) return;
+    const request = loadId.current;
     setSaving(true);
     setFailure("");
     setMessage("");
     try {
       await saveSection(section, data, revision);
+      if (request !== loadId.current) return;
       setRevision((v) => v + 1);
       setDirty(false);
       setMessage(
         "Saved to Firebase. The public website now uses this content.",
       );
     } catch (e) {
+      if (request !== loadId.current) return;
       setFailure(
         e instanceof Error
           ? e.message
@@ -280,7 +299,8 @@ export default function Workspace() {
     }
   }
   const current = (language === "fr" ? data?.fr : data) as
-    ContentDocument | undefined;
+    | ContentDocument
+    | undefined;
   function fields(
     value: ContentDocument,
     onChange: (patch: ContentDocument) => void,
@@ -458,6 +478,7 @@ export default function Workspace() {
           <ArrowUpRight size={16} /> View website
         </Link>
         <button
+          disabled={saving || applying}
           className="cms-logout"
           type="button"
           onClick={() => {
@@ -492,9 +513,25 @@ export default function Workspace() {
           )}
         </header>
         {failure && (
-          <p className="cms-alert error" role="alert">
-            {failure}
-          </p>
+          <div className="cms-alert error" role="alert">
+            <p>{failure}</p>
+            <button
+              className="cms-secondary"
+              type="button"
+              disabled={loading || saving || applying}
+              onClick={() => {
+                if (
+                  !dirty ||
+                  window.confirm(
+                    "Reload saved content and discard your unsaved changes?",
+                  )
+                )
+                  setLoadAttempt((v) => v + 1);
+              }}
+            >
+              <RefreshCw size={16} /> Reload saved content
+            </button>
+          </div>
         )}
         {message && (
           <p className="cms-alert" role="status">
@@ -515,7 +552,7 @@ export default function Workspace() {
                 <button
                   className="cms-primary"
                   type="button"
-                  disabled={applying}
+                  disabled={applying || loading || !!failure}
                   onClick={() => void apply()}
                 >
                   <RefreshCw size={16} />
@@ -541,9 +578,13 @@ export default function Workspace() {
                   <span
                     className={`cms-badge ${savedSections.includes(key) ? "saved" : ""}`}
                   >
-                    {savedSections.includes(key)
-                      ? "Saved in Firebase"
-                      : "Prepared for review"}
+                    {loading
+                      ? "Checking saved content…"
+                      : failure
+                        ? "Connection unavailable"
+                        : savedSections.includes(key)
+                          ? "Saved in Firebase"
+                          : "Prepared for review"}
                   </span>
                   <h2>{titles[key]}</h2>
                   <p>{descriptions[key]}</p>
@@ -557,7 +598,12 @@ export default function Workspace() {
         ) : loading ? (
           <p role="status">Loading your saved content…</p>
         ) : data && current ? (
-          <>
+          <fieldset
+            className="cms-edit-fields"
+            disabled={saving}
+            aria-busy={saving}
+          >
+            <legend className="sr-only">{titles[section]} editor</legend>
             <div className="cms-toolbar">
               <div
                 className="cms-language"
@@ -576,7 +622,11 @@ export default function Workspace() {
                 ))}
               </div>
               <span className="cms-save-state">
-                {dirty ? "Unsaved changes" : "Ready to edit"}
+                {saving
+                  ? "Publishing changes…"
+                  : dirty
+                    ? "Unsaved changes"
+                    : "Ready to edit"}
               </span>
             </div>
             {rows ? (
@@ -702,7 +752,7 @@ export default function Workspace() {
                 {saving ? "Saving…" : "Save & publish"}
               </button>
             </div>
-          </>
+          </fieldset>
         ) : null}
       </main>
     </div>
